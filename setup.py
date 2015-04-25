@@ -1,5 +1,6 @@
 import os
 from setuptools import setup
+from setuptools import find_packages
 
 with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
     README = readme.read()
@@ -9,8 +10,8 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-multi-contact',
-    version='0.1',
-    packages=['contact'],
+    version='0.2',
+    packages=find_packages(),
     include_package_data=True,
     license='MIT License',  # example license
     description='Django-multi-contact is a simple Django app to conduct contact form.',
@@ -18,11 +19,15 @@ setup(
     url='http://github.com/watchdogpolska/multi-contact/',
     author='Adam Dobrawy',
     author_email='naczelnik@jawnosc.tk',
+    zip_safe=False,
+    install_requires=[
+        'django',
+    ],
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License', # example license
+        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
